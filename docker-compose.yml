@@ -1,0 +1,14 @@
+version: '2'
+services:
+
+  rar2fs:
+    image: andreklang/rar2fs
+    container_name: rar2fs
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    volumes:
+      - ./folder-one:/media/folder-one
+      - ./folder-two:/media/folder-two
